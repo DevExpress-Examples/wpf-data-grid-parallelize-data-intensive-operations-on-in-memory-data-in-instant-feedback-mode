@@ -1,0 +1,38 @@
+﻿<Window x:Class="PLinqDataSource.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns:local="clr-namespace:PLinqDataSource"
+        Title="MainWindow" Height="800" Width="1000">
+    <Window.DataContext>
+        <local:PLinqViewModel />
+    </Window.DataContext>
+    <Grid>
+        <dx:PLinqInstantFeedbackDataSource Name="pLinqInstantDataSource" ListSource="{Binding Path=ListSource}" />
+        <dxg:GridControl Name="grid" ItemsSource="{Binding ElementName=pLinqInstantDataSource, Path=Data}">
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn x:Name="colOrderId" FieldName="OrderId" Header="ID" Width="60" MinWidth="60" AllowColumnFiltering="False" AllowGrouping="False" />
+                <dxg:GridColumn x:Name="colCustomerName" FieldName="CustomerName" Width="200" />
+                <dxg:GridColumn x:Name="colOrderDate" FieldName="OrderDate" Width="100" AllowColumnFiltering="False">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:DateEditSettings DisplayFormat="d" />
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colProductName" FieldName="ProductName" Width="200" />
+                <dxg:GridColumn x:Name="colPrice" FieldName="Price" Width="60" />
+                <dxg:GridColumn x:Name="colQuantity" FieldName="Quantity" Width="60" />
+            </dxg:GridControl.Columns>
+            <dxg:GridControl.View>
+                <dxg:TableView AutoWidth="True" ShowTotalSummary="True" RowAnimationKind="None" />
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+    </Grid>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closed">
+            <i:InvokeCommandAction Command="{Binding ElementName=pLinqInstantItemsSource, Path=DisposeCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+</Window>
