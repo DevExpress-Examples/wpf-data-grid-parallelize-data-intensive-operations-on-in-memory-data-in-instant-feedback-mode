@@ -3,7 +3,7 @@
 
 * [Data.cs](./CS/Data.cs) (VB: [Data.vb](./VB/Data.vb))
 * [MainWindow.xaml](./CS/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/MainWindow.xaml))
-* [MainWindow.xaml.cs](./CS/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/MainWindow.xaml))
+* [MainWindow.xaml.cs](./CS/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/MainWindow.xaml.vb))
 * [ViewModel.cs](./CS/ViewModel.cs) (VB: [ViewModel.vb](./VB/ViewModel.vb))
 <!-- default file list end -->
 # How to parallelize data-intensive operations on in-memory data in Instant Feedback UI mode
