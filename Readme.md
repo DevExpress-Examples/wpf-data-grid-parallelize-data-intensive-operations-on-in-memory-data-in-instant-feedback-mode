@@ -15,7 +15,6 @@
 
 
 <p>In this demo, the DevExpress Grid Control for WPF operates in <strong>Instant Feedback</strong> data binding mode on in-memory data. All operations on data (e.g. sorting, groping, filtering, summary calculation, etc.) are performed asynchronously and parallelized on multiple processors. This allows the computing power of your hardware to be utilized to the full extent without UI freezing.</p><p><strong>See also:</strong><br />
-<u>WPF Data Grid Control – PLINQ Data Support</u><br />
 <a href="http://documentation.devexpress.com/#WPF/CustomDocument10472"><u>Binding to In-Memory Data Using PLINQ</u></a></p>
 
 <br/>
